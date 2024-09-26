@@ -39,6 +39,17 @@ public class PortalLoginTest extends portalbasetest {
         getPortalLoginpage().ForgotPassword(excel.getCellData(8, "email"));
 
     }
+    @Test(priority =5)
+    public void TC_loginFailWithEmailNull() {
+        getPortalLoginpage().loginFailWithEmailNull();
+    }
+    @Test(priority = 6)
+    public void TC_loginFailWithNullPassword() {
+        ExcelHelpers excel = new ExcelHelpers();
+        excel.setExcelFile(FrameworkConstants.EXCEL_IPSOS_LOGIN, "Login");
+        getPortalLoginpage().loginFailWithNullPassword(excel.getCellData(7, "email"));
+    }
+
 
 
 }

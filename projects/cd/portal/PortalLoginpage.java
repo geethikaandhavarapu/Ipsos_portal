@@ -117,6 +117,20 @@ public class PortalLoginpage extends CommonPage{
         clickElement(activeProject);
         clickElement(activitiesIcon);
     }
+    public void loginFailWithEmailNull() {
+        LoginPage();
+        clickElement(emailField);
+
+    }
+    public void loginFailWithNullPassword(String email){
+        LoginPage();
+        clickElement(emailField);
+        setText(emailField, email);
+        clickElement(nextButton);
+        clickElement(passWordField);
+
+        waitForPageLoaded();
+    }
 
 
 
